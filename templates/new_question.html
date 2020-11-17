@@ -1,0 +1,22 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'inc/unlogin_navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="col-9">
+    <div class="row">
+        <span class="h2">New Questions</span>
+        <a class="h4 col-5 second-text" href="{% url 'hot_questions' %}">Hot Questions</a>
+    </div>
+
+    {% for question in questions %}
+        {% include 'inc/question_box.html' %}
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
+

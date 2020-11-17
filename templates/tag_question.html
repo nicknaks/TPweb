@@ -1,0 +1,22 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'inc/login_navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="col-9">
+    <div class="row">
+        <span class="h2 col-4">Tag: {{ tag }} </span>
+    </div>
+    {% for question in questions %}
+        {% include 'inc/question_box.html' %}
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+{% block right %}
+{% include 'inc/popular_tags_and_best_members.html' %}
+{% endblock right %}

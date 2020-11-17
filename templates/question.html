@@ -1,0 +1,46 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'inc/login_navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="col-9">
+    <div class="media">
+        <div class="col-0" style="padding: 20px;">
+            <img src={% static "pizza.jpg"%} class=" mr-3 question-img" style= "max-width: 300px;" alt="...">
+            <div class="container font-weight-bolder" style="margin-left: 15px;">
+                5
+            </div>
+            <div class="btn-group" role="group" aria-label="LikeDislike">
+                <button type="button" class="btn btn-danger">-</button>
+                <button type="button" class="btn btn-success">+</button>
+            </div>
+        </div>
+        <div class="media-body col-10">
+            <h5 class="mt-0">{{question.title}}</h5>
+            <p>
+                {{ question.text }}
+            </p>
+                Tags: 
+                {% for onetag in question.tag %}
+                <a href="">{{ onetag }}</a>
+                {% endfor %}
+        </div>
+    </div>
+    {% include 'inc/question_answer_box.html'%}
+    {% include 'inc/question_answer_box.html'%}
+    {% include 'inc/question_answer_box.html'%}
+    {% include 'inc/question_answer_box.html'%}
+    {% include 'inc/question_answer_box.html'%}
+
+    <div class="form-group">
+        <label for="inputAnswer"></label>
+        <textarea class="form-control" id="Answer" rows="7">Enter your answer here...</textarea>
+    </div>
+
+    <button class="btn btn-success" type="submit">Answer</button>
+</div>
+
+{% endblock content %}

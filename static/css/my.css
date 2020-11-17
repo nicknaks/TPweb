@@ -22,7 +22,6 @@ code {
 .question-box {
   margin-top: 30px;
   border: 2px solid black;
-  border-radius: 10px;
   padding: 20px;
 }
 
@@ -32,9 +31,42 @@ code {
 }
 
 .question-img {
-  max-width: 150px;
+  max-width: 64px;
+  max-height: 64px;
 }
 
 .question-under-text {
   margin-top: 15px;
+}
+
+.navbar-search-form {
+  width: 900px;
+}
+
+.navbar-img{
+  max-width: 40px;
+}
+
+.navbar-title {
+  margin-left: 160px;
+}
+
+.navbar-search-text{
+  width: 400px;
+}
+
+.navbar-settings{
+  margin-left: 20px;
+}
+
+.navbar-login{
+  margin-left: 5px;
+}
+
+.second-text{
+  margin-top: 7px;
+}
+
+.but-like-dislike{
+  margin-right: 10px;
 }

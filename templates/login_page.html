@@ -1,0 +1,34 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'inc/unlogin_navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="col-9">
+   <div class="row">
+      <span class="h2  col-2"> Log In</span>
+   </div>
+   <span class="badge badge-danger">Sorry, wrong password!</span>
+   <form>
+      <div class="form-group row">
+         <label for="inputLogin" class="col-sm-2 col-form-label">Login</label>
+         <div class="col-4">
+            <input type="text" class="form-control" id="login" placeholder="Enter your login here">
+         </div>
+      </div>
+      <div class="form-group row">
+         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+         <div class="col-4">
+            <input type="password" class="form-control" id="password" placeholder="123456">
+         </div>
+      </div>
+      <div>
+         <button type="submit" class="btn btn-primary">Log in</button>
+      </div>
+      <a href="{% url 'signup' %}">create new account</a>
+   </form>
+</div>
+
+{% endblock content %}

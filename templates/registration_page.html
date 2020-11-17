@@ -1,0 +1,63 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'inc/unlogin_navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="col-9">
+    <div class="row">
+        <span class="h2 col-1">Registration</span>
+    </div>
+    <span class="badge badge-danger">Sorry, this email address already registred!</span>
+    <form>
+        <div class="form-group row">
+            <label for="inputLogin" class="col-sm-3 col-form-label">Login</label>
+            <div class="col-4">
+                <input type="text" class="form-control" id="login" placeholder="Enter your login here">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-4">
+                <input type="text" class="form-control" id="email" placeholder="Enter your email here">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputNickName" class="col-sm-3 col-form-label">NickName</label>
+            <div class="col-4">
+                <input type="text" class="form-control" id="login" placeholder="Enter your NickName here">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputPassword1" class="col-sm-3 col-form-label">Password</label>
+            <div class="col-4">
+                <input type="password" class="form-control" id="password1" placeholder="123456">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputPassword2" class="col-sm-3 col-form-label">Repeat password</label>
+            <div class="col-4">
+                <input type="password" class="form-control" id="password2" placeholder="123456">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="uploadAvatar" class="col-sm-3 col-form-label">Upload avatar</label>
+            <div class="col-4">
+                <input type="file" class="form-control-file" id="avatar">
+            </div>
+        </div>
+
+        <div class="col-form-label">
+            <button type="submit" class="btn btn-primary col-2">Regiter!</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
