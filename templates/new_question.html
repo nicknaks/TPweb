@@ -16,6 +16,10 @@
         {% include 'inc/question_box.html' %}
     {% endfor %}
 
+    {% with objects=questions %}
+        {% include 'inc/pagination.html'%}
+    {% endwith %}
+
 </div>
 
 {% endblock content %}

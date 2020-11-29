@@ -41,21 +41,37 @@ def ask(request):
     })
 
 def hot_questions(request):
+    limit = request.GET.get('limit', 5)
+    paginator = Paginator(questions, limit)
+    page = request.GET.get('page')
+    pagination_questions = paginator.get_page(page)
+    
     return render(request, 'hot_question.html', {
-        'questions' : questions,
+        'questions' : pagination_questions,
         'tags' : tags,
     })
 
 def new_questions(request):
+    limit = request.GET.get('limit', 8)
+    paginator = Paginator(questions, limit)
+    page = request.GET.get('page')
+    pagination_questions = paginator.get_page(page)
+
     return render(request, 'new_question.html', {
-        'questions' : questions,
+        'questions' : pagination_questions,
         'tags' : tags,
     })
 
-def tag_questions(request, pk):
+def tag_questions(request, pk) :
+
+    limit = request.GET.get('limit', 5)
+    paginator = Paginator(questions, limit)
+    page = request.GET.get('page')
+    pagination_questions = paginator.get_page(page)
+
     return render(request, 'tag_question.html', {
         'tag' : pk,
-        'questions' : questions,
+        'questions' : pagination_questions,
         'tags' : tags,
     })
 
